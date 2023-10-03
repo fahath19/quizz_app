@@ -1,0 +1,146 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    background-color: blue;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;  
+    background-color: #12232E;
+    background-color: #2b2e63;
+    color: white;
+}
+.playbtn{
+    background-color: #3e8de3;
+
+    border: none;
+    outline: none;
+    width: 250px;
+    height: 60px;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    color: white;
+    border-radius: 10px;
+}
+.playbtn:hover{
+    border-radius: 10px;
+    background-color: #007CC7;
+}
+.title{
+    font-size: 5rem;
+    margin-bottom: 3.5rem;
+    font-family: sans-serif;
+    color: #ced2d4;
+    /*
+       61828a
+       dfe9eb
+       abc3cd
+       a9cccf
+       798dc5     
+       2b2e63
+       cod7fb
+       3e8de3
+    */
+}
+nav{
+    display: flex;
+    background-color: #2b2e63;
+    color: white;
+    text-transform: capitalize;
+    font-family: sans-serif;
+    padding: 8px 3rem;
+    align-items: center;
+
+}
+ul{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;    
+    list-style-type: none;
+}
+li{
+    margin: 10px 1.5rem;
+    font-size: 1.6rem;
+    padding: 10px;
+    border: 2px dotted #007CC7;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px rgb(94, 93, 93),-1px -1px 3px rgb(200, 14, 14);
+
+}
+li:hover{
+    background-color: #12232E;
+    border-radius: 5px;
+    color: rgb(201, 40, 40);
+
+}
+.logo{
+    font-size: 3rem;
+    font-family: sans-serif;
+    color: #c0d7fb;
+}
+
+
+@media screen and ( max-width:577px ) {
+    .logo{
+        margin-right: 8rem;
+
+    }
+    nav{
+        flex-direction: column;
+        position: relative;
+    }
+    ul{
+        flex-direction: column;
+
+        width: 133%;
+        margin-top: 1rem;
+        display: none;
+
+    }
+    li{
+        text-align: center;
+        border: none;
+        box-shadow: none;
+        border-bottom: 1px solid #2d2e2f;
+        background-color: #3e8de3;
+        margin: 0;
+    }
+    .title{
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+    .playbtn{
+         width: 220px;
+         height: 50px;
+         margin-bottom: 10rem;
+    }
+    .menu{
+        position: absolute;
+        margin-top: 0.9rem;
+        padding-left: 5rem;
+        right: 2rem;
+        top: 1rem;
+
+   }
+    .menu div{
+        width: 40px;
+        height: 3px;
+        background-color: white;
+        margin-bottom: 7px;
+    }
+    .show-menu{
+        display: block;
+    }
+    .container{
+        height: 100vh;
+    }
+}
