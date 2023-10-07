@@ -5,7 +5,7 @@ let question=[
          b:" Jawaharlal Nehru ",
          c:"Bahath Singh",
          d:"Ambedkar",
-         ans:"a "
+         ans:"a"
   
       },
       {
@@ -52,8 +52,10 @@ let s1=document.querySelector('.s1');
 let s2=document.querySelector('.s2');
 let s3=document.querySelector('.s3');
 let s4=document.querySelector('.s4');
+let score=0;
+let currentquestion=0
+let totalquestion=question.length;
 
-currentquestion=0
 function load(index){
    let data=question[index];
     ques.innerHTML=`${index+1}.${data.qizz}`;
@@ -61,11 +63,44 @@ function load(index){
      s2.innerText=`${data.b}`;
      s3.innerText=`${data.c}`;
      s4.innerText=`${data.d}`;
+     let selectedoption=document.querySelector( 'input[type="radio"]:checked')
+   /*    
+     if(selectedoption && selectedoption.checked){
+      selectedoption.checked= false
 
-     
+  }
+     */
 }
-load(currentquestion);
-nbtn.addEventListener('click',()=>{
-   currentquestion++;
-   load(currentquestion)
+document.querySelector('.menu').addEventListener('click',()=>{
+    document.querySelector('ul').classList.toggle('show-menu')
 });
+load(currentquestion);
+    nbtn.addEventListener('click',()=>{
+      let selectedoption=document.querySelector( 'input[type="radio"]:checked')
+      if(!selectedoption){
+            alert('khdklfj')
+            return;
+      }
+    if(selectedoption.value==question[currentquestion].ans){
+       score+=10;
+    }
+    currentquestion++;
+
+    if(currentquestion==totalquestion){
+      console.log("let finish");
+      document.querySelector('.card').style.display="none";
+      document.querySelector('.rbtn').style.display="block";
+      document.querySelector('.score').style.display="block";
+      document.querySelector('.score').innerText=`score : ${score}`
+      return
+    }
+    load(currentquestion)
+});
+document.querySelector('.rbtn').addEventListener('click',()=>{
+     currentquestion=0;
+     score=0;
+     document.querySelector('.rbtn').style.display="";
+     document.querySelector('.score').style.display="";
+     document.querySelector('.card').style.display="flex";
+     load(currentquestion);
+})
